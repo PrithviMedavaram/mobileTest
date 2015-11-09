@@ -1,0 +1,9 @@
+.wm-app .app-tabbar .navbar .navbar-nav.tab-items,
+.wm-app .app-tabbar .navbar,
+.wm-app .app-tabbar.bottom {
+    background-color: black;
+}
+.container-pri {
+    color: red;
+    font-size: 25px;
+}

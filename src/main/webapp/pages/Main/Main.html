@@ -1,10 +1,8 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage">
-  <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
-  <wm-mobile-navbar name="mobile_navbar1" title="Title" backbuttoniconclass="fa fa-chevron-left" leftnavpaneliconclass="fa fa-bars">
-    <wm-button class="btn-transparent" caption="" type="button" name="AddButton" iconclass="glyphicon glyphicon-plus"></wm-button>
-  </wm-mobile-navbar>
-  <wm-content name="content1">
-    <wm-page-content columnwidth="12" name="page_content1"></wm-page-content>
-  </wm-content>
-  <wm-mobile-tabbar dataset="home,music,edit" name="mobile_tabbar1"></wm-mobile-tabbar>
+<wm-page data-ng-controller="MainPageController" name="page1">
+    <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
+    <wm-mobile-navbar name="mobile_navbar1" title="top title" class="container-pri" fontsize="31" color="#0000ff" horizontalalign="center" show="true" backbutton="true" searchbutton="true"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1" horizontalalign="left"></wm-page-content>
+    </wm-content>
+    <wm-mobile-tabbar dataset="bind:Variables.staticVariable1.dataSet" name="mobile_tabbar1" itemlabel="item-label" itemicon="item-icon" itemlink="item-link" show="false" dropposition="down" class="container-pri"></wm-mobile-tabbar>
 </wm-page>

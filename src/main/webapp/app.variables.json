@@ -1,53 +1,235 @@
 {
-    "goToPage-Main": {
-        "category": "wm.NavigationVariable",
-        "operation": "gotoPage",
-        "pageName": "Main",
-        "_id": "wm-wm.NavigationVariable1389180517517",
-        "name": "goToPage-Main",
-        "owner": "App"
-    },
-    "supportedLocale": {
-        "name": "supportedLocale",
-        "type": "string",
-        "isList": false,
-        "owner": "App",
-        "dataSet": {
-            "en": "English"
-        },
-        "saveInPhonegap": false,
-        "category": "wm.Variable",
-        "_id": "wm-wm.Variable1402640443182"
-    },
-  "deviceInfo": {
-    "owner": "App",
-    "dataSet": {
-      "connectionType": "NONE",
-      "deviceModel": "DEVICEMODEL",
-      "os": "DEVICEOS",
-      "osVersion": "X.X.X",
-      "deviceUUID": "DEVICEUUID"
-    },
-    "dataBinding": {},
-    "service": "device",
-    "operation": "getDeviceInfo",
-    "startUpdate": true,
-    "category": "wm.DeviceVariable",
-    "_id": "wm-deviceInfo-getDeviceInfo-wm.DeviceVariable-1444134852623",
-    "name": "deviceInfo"
-  },
-  "appInfo": {
-    "owner": "App",
-    "dataSet": {
-      "appversion": "X.X.X",
-      "cordovaversion": "X.X.X"
-    },
-    "dataBinding": {},
-    "service": "device",
-    "operation": "getAppInfo",
-    "startUpdate": true,
-    "category": "wm.DeviceVariable",
-    "_id": "wm-getAppInfo-wm.DeviceVariable-1444134876543",
-    "name": "appInfo"
-  }
+	"goToPage-Main": {
+		"name": "goToPage-Main",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Main",
+		"dataBinding": {},
+		"pageTransitions": "none",
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage-Main-wm.NavigationVariable1389180517517"
+	},
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
+	},
+	"deviceInfo": {
+		"name": "deviceInfo",
+		"owner": "App",
+		"dataSet": {
+			"connectionType": "NONE",
+			"deviceModel": "DEVICEMODEL",
+			"os": "DEVICEOS",
+			"osVersion": "X.X.X",
+			"deviceUUID": "DEVICEUUID"
+		},
+		"dataBinding": {},
+		"service": "device",
+		"operation": "getDeviceInfo",
+		"startUpdate": true,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"vibrationtime": 2,
+		"category": "wm.DeviceVariable",
+		"_id": "wm-deviceInfo-getDeviceInfo-wm.DeviceVariable-1444134852623"
+	},
+	"appInfo": {
+		"name": "appInfo",
+		"owner": "App",
+		"dataSet": {
+			"appversion": "X.X.X",
+			"cordovaversion": "X.X.X"
+		},
+		"dataBinding": {},
+		"service": "device",
+		"operation": "getAppInfo",
+		"startUpdate": true,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"vibrationtime": 2,
+		"category": "wm.DeviceVariable",
+		"_id": "wm-appInfo-getAppInfo-wm.DeviceVariable-1444134876543"
+	},
+	"goToPage_Page": {
+		"name": "goToPage_Page",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Page",
+		"dataBinding": {},
+		"pageTransitions": "none",
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Page-wm.NavigationVariable-1447049235356"
+	},
+	"staticVariable1": {
+		"name": "staticVariable1",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"data": [
+				{
+					"item-link": "#/toy",
+					"item-icon": "glyphicon glyphicon-dashboard",
+					"item-label": "Dashboard"
+				},
+				{
+					"item-link": "#/Main",
+					"item-icon": "glyphicon glyphicon-dashboard",
+					"item-label": "dashuuuuu"
+				},
+				{
+					"item-link": "#/Sale",
+					"item-icon": "glyphicon glyphicon-briefcase",
+					"item-label": "Salesuuuuuuuuuuuu"
+				},
+				{
+					"item-link": "#/Reps",
+					"item-icon": "glyphicon glyphicon-user",
+					"item-label": "Reps"
+				},
+				{
+					"item-link": "#/Leads",
+					"item-icon": "glyphicon glyphicon-flash",
+					"item-label": "Leads"
+				}
+			]
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "data",
+						"type": "string"
+					}
+				],
+				"type": "object",
+				"isList": false
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-staticVariable1-wm.Variable-1447048133618"
+	},
+	"ImageDbTable1Data": {
+		"name": "ImageDbTable1Data",
+		"type": "Table1",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "TABLE1",
+				"fields": [
+					{
+						"name": "id",
+						"type": "number"
+					},
+					{
+						"name": "url",
+						"type": "string",
+						"value": "bind:Widgets.textarea1.datavalue"
+					},
+					{
+						"name": "image",
+						"type": "binary"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": true,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "imageDb",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "MySQL",
+		"_id": "wm-ImageDbTable1Data-wm.LiveVariable-1447062725778",
+		"package": "com.mobiletest.imagedb.Table1",
+		"tableName": "TABLE1",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "id",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "ID",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "identity",
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "url",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "url",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"id"
+			],
+			"entityName": "Table1",
+			"fullyQualifiedName": "com.mobiletest.imagedb.Table1",
+			"tableType": "TABLE"
+		},
+		"bindCount": 1,
+		"filterFields": {}
+	}
 }

@@ -1,41 +1,164 @@
 <style id="Main.css">
-
+.wm-app .app-tabbar .navbar .navbar-nav.tab-items,
+.wm-app .app-tabbar .navbar,
+.wm-app .app-tabbar.bottom {
+    background-color: black;
+}
+.container-pri {
+    color: red;
+    font-size: 25px;
+}
 </style>
 <script id="Main.js">
-Application.$controller("MainPageController", ["$scope", function ($scope) {
+Application.$controller("MainPageController", ["$scope", function($scope) {
     "use strict";
 
-    /* perform any action on the variables within this block(on-page-load) */
-    $scope.onPageVariablesReady = function () {
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function() {
         /*
          * variables can be accessed through '$scope.Variables' property here
-         * e.g. to get data in a static variable named 'loggedInUser' use following script
-         * $scope.Variables.loggedInUser.getData()
+         * e.g. $scope.Variables.staticVariable1.getData()
          */
     };
-    /* perform any action on widgets within this block */
-    $scope.onPageReady = function () {
+
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function() {
         /*
          * widgets can be accessed through '$scope.Widgets' property here
-         * e.g. to get value of text widget named 'username' use following script
-         * '$scope.Widgets.username.datavalue'
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
          */
+    };
+
+
+    $scope.livelist2Click = function($event, $isolateScope) {
+        $scope.Widgets.view3.show = true;
     };
 
 }]);
 </script>
 <script id="Main.variables.json">
-var _MainPage_Variables_ ={};
+var _MainPage_Variables_ ={
+	"insertIntoDB": {
+		"name": "insertIntoDB",
+		"type": "Table1",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "TABLE1",
+				"fields": [
+					{
+						"name": "id",
+						"type": "number"
+					},
+					{
+						"name": "url",
+						"type": "string",
+						"value": "bind:Widgets.textarea1.datavalue"
+					},
+					{
+						"name": "image",
+						"type": "binary",
+						"value": "bind:Widgets.fileupload1.selectedFiles[0]"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "imageDb",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-insertIntoDB-wm.LiveVariable-1447068617179",
+		"package": "com.mobiletest.imagedb.Table1",
+		"tableName": "TABLE1",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "id",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "ID",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "identity",
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "url",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "url",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"id"
+			],
+			"entityName": "Table1",
+			"fullyQualifiedName": "com.mobiletest.imagedb.Table1",
+			"tableType": "TABLE"
+		}
+	},
+	"deviceVariable1": {
+		"name": "deviceVariable1",
+		"owner": "Page",
+		"dataSet": {
+			"imagePath": "resources/images/imagelists/default-image.png"
+		},
+		"dataBinding": {},
+		"service": "camera",
+		"operation": "captureImage",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageTargetWidth": 150,
+		"imageTargetHeight": 150,
+		"imageEncodingType": "0",
+		"allowImageEdit": true,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"vibrationtime": 2,
+		"category": "wm.DeviceVariable",
+		"_id": "wm-deviceVariable1-wm.DeviceVariable-1447073545945"
+	}
+}
 </script>
 <script id="Main.html" type="text/ng-template">
-<wm-page data-ng-controller="MainPageController" name="mainpage">
-  <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
-  <wm-mobile-navbar name="mobile_navbar1" title="Title" backbuttoniconclass="fa fa-chevron-left" leftnavpaneliconclass="fa fa-bars">
-    <wm-button class="btn-transparent" caption="" type="button" name="AddButton" iconclass="glyphicon glyphicon-plus"></wm-button>
-  </wm-mobile-navbar>
-  <wm-content name="content1">
-    <wm-page-content columnwidth="12" name="page_content1"></wm-page-content>
-  </wm-content>
-  <wm-mobile-tabbar dataset="home,music,edit" name="mobile_tabbar1"></wm-mobile-tabbar>
+<wm-page data-ng-controller="MainPageController" name="page1">
+    <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
+    <wm-mobile-navbar name="mobile_navbar1" title="top title" class="container-pri" fontsize="31" color="#0000ff" horizontalalign="center" show="true" backbutton="true" searchbutton="true"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1" horizontalalign="left"></wm-page-content>
+    </wm-content>
+    <wm-mobile-tabbar dataset="bind:Variables.staticVariable1.dataSet" name="mobile_tabbar1" itemlabel="item-label" itemicon="item-icon" itemlink="item-link" show="false" dropposition="down" class="container-pri"></wm-mobile-tabbar>
 </wm-page>
 </script>

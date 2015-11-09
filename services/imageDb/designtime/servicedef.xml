@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="imageDb" type="DataService" springFile="imageDb.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.mobiletest.imagedb.Table1">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="url" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>
